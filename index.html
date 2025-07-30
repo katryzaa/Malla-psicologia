@@ -1,1 +1,116 @@
-# Malla-psicologia
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malla Curricular de Psicología</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Malla Curricular de Psicología</h1>
+        <p>Haz clic en un ramo para marcarlo como aprobado. Los requisitos se verificarán automáticamente.</p>
+    </header>
+
+    <main class="curriculum-grid">
+        <section class="semester">
+            <h2>1er Semestre</h2>
+            <div class="course" data-course-id="estrategias-aprendizaje">Estrategias para el aprendizaje</div>
+            <div class="course" data-course-id="antropologia">Antropología</div>
+            <div class="course" data-course-id="fundamentos-biologicos">Fundamentos biológicos del comportamiento</div>
+            <div class="course" data-course-id="procesos-cognitivos">Procesos cognitivos</div>
+            <div class="course" data-course-id="evolucion-historica">Evolución histórica de la psicología</div>
+            <div class="course" data-course-id="fundamentos-filosoficos">Fundamentos filosóficos de la psicología</div>
+            <div class="course" data-course-id="taller-comunicacion">Taller de comunicación</div>
+        </section>
+
+        <section class="semester">
+            <h2>2do Semestre</h2>
+            <div class="course" data-course-id="etica" data-prerequisites="antropologia">Ética</div>
+            <div class="course" data-course-id="neuropsicologia" data-prerequisites="fundamentos-biologicos">Neuropsicología</div>
+            <div class="course" data-course-id="procesos-afectivos">Procesos afectivos</div>
+            <div class="course" data-course-id="fundamentos-sociantropologicos">Fundamentos sociantropológicos del comportamiento</div>
+            <div class="course" data-course-id="introduccion-metodologia-investigacion">Introducción a la metodología de la investigación</div>
+            <div class="course" data-course-id="taller-trabajo-grupal">Taller de trabajo grupal</div>
+            <div class="course" data-course-id="electivo-formacion-integral-i" data-prerequisites="etica">Electivo de formación integral I</div>
+        </section>
+
+        <section class="semester">
+            <h2>3er Semestre</h2>
+            <div class="course" data-course-id="psicologia-evolutiva-i" data-prerequisites="procesos-cognitivos,procesos-afectivos">Psicología evolutiva I</div>
+            <div class="course" data-course-id="psicologia-personalidad" data-prerequisites="procesos-cognitivos,procesos-afectivos">Psicología de la personalidad</div>
+            <div class="course" data-course-id="psicologia-social-i">Psicología social I</div>
+            <div class="course" data-course-id="metodologia-investigacion-aplicada" data-prerequisites="introduccion-metodologia-investigacion">Metodología de la investigación aplicada a la psicología</div>
+            <div class="course" data-course-id="taller-entrevista">Taller de entrevista</div>
+            <div class="course" data-course-id="electivo-formacion-integral-ii">Electivo formación integral II</div>
+        </section>
+
+        <section class="semester">
+            <h2>4to Semestre</h2>
+            <div class="course" data-course-id="psicopatologia-general" data-prerequisites="psicologia-personalidad">Psicopatología general</div>
+            <div class="course" data-course-id="psicologia-evolutiva-ii" data-prerequisites="psicologia-evolutiva-i">Psicología evolutiva II</div>
+            <div class="course" data-course-id="psicologia-social-ii" data-prerequisites="psicologia-social-i">Psicología social II</div>
+            <div class="course" data-course-id="analisis-datos-cuantitativos" data-prerequisites="metodologia-investigacion-aplicada">Análisis de datos cuantitativos</div>
+            <div class="course" data-course-id="evaluacion-psicologica-cognitiva" data-prerequisites="neuropsicologia,psicologia-personalidad">Evaluación psicológica cognitiva</div>
+            <div class="course" data-course-id="electivo-formacion-integral-iii">Electivo de formación integral III</div>
+        </section>
+
+        <section class="semester">
+            <h2>5to Semestre</h2>
+            <div class="course" data-course-id="psicopatologia-psiquiatria-infantil" data-prerequisites="psicopatologia-general">Psicopatología y psiquiatría infantil</div>
+            <div class="course" data-course-id="teorias-psicologicas-i" data-prerequisites="evolucion-historica">Teorías psicológicas I</div>
+            <div class="course" data-course-id="analisis-datos-cualitativos" data-prerequisites="metodologia-investigacion-aplicada">Análisis de datos cualitativos</div>
+            <div class="course" data-course-id="evaluacion-psicologica-personalidad" data-prerequisites="evaluacion-psicologica-cognitiva">Evaluación psicológica de la personalidad</div>
+            <div class="course" data-course-id="politicas-publicas">Políticas públicas</div>
+            <div class="course" data-course-id="electivo-formacion-integral-iv">Electivo de formación integral IV</div>
+        </section>
+
+        <section class="semester">
+            <h2>6to Semestre</h2>
+            <div class="course" data-course-id="teorias-psicologicas-ii" data-prerequisites="evolucion-historica">Teorías psicológicas II</div>
+            <div class="course" data-course-id="psicopatologia-psiquiatria-adulto" data-prerequisites="psicopatologia-general">Psicopatología y psiquiatría adulto</div>
+            <div class="course" data-course-id="evaluacion-psicologica-integrada" data-prerequisites="evaluacion-psicologica-personalidad">Evaluación psicológica integrada</div>
+            <div class="course" data-course-id="introduccion-formulacion-proyectos" data-prerequisites="metodologia-investigacion-aplicada">Introducción a la formulación y evaluación de proyectos sociales</div>
+            <div class="course" data-course-id="taller-persona-psicologo" data-prerequisites="evaluacion-psicologica-personalidad">Taller persona del psicólogo</div>
+        </section>
+
+        <section class="semester">
+            <h2>7mo Semestre</h2>
+            <div class="course" data-course-id="introduccion-psicoterapia-sistemica" data-prerequisites="teorias-psicologicas-i">Introducción a la psicoterapia sistémica</div>
+            <div class="course" data-course-id="introduccion-psicoterapia-psicoanalitica" data-prerequisites="teorias-psicologicas-i">Introducción a la psicoterapia psicoanalítica</div>
+            <div class="course" data-course-id="comportamiento-organizacional" data-prerequisites="psicologia-social-ii,teorias-psicologicas-i,teorias-psicologicas-ii">Comportamiento organizacional</div>
+            <div class="course" data-course-id="factores-psicologicos-educativos" data-prerequisites="psicologia-social-ii,teorias-psicologicas-i,teorias-psicologicas-ii">Factores psicológicos en procesos educativos</div>
+            <div class="course" data-course-id="problemas-psicosociales-actuales" data-prerequisites="psicologia-social-ii,teorias-psicologicas-i,teorias-psicologicas-ii">Problemas psicosociales actuales</div>
+            <div class="course" data-course-id="integracion-psicologia" data-prerequisites="teorias-psicologicas-i,teorias-psicologicas-ii">Integración en psicología</div>
+        </section>
+
+        <section class="semester">
+            <h2>8vo Semestre</h2>
+            <div class="course" data-course-id="introduccion-psicoterapia-cognitiva" data-prerequisites="teorias-psicologicas-ii">Introducción a la psicoterapia cognitiva</div>
+            <div class="course" data-course-id="introduccion-psicoterapia-humanista" data-prerequisites="teorias-psicologicas-ii">Introducción a la psicoterapia humanista</div>
+            <div class="course" data-course-id="gestion-personas-organizaciones" data-prerequisites="comportamiento-organizacional,teorias-psicologicas-i,teorias-psicologicas-ii">Gestión de personas y organizaciones</div>
+            <div class="course" data-course-id="gestion-escolar" data-prerequisites="factores-psicologicos-educativos,teorias-psicologicas-i,teorias-psicologicas-ii">Gestión escolar</div>
+            <div class="course" data-course-id="psicologia-comunitaria" data-prerequisites="problemas-psicosociales-actuales,teorias-psicologicas-i,teorias-psicologicas-ii">Psicología comunitaria</div>
+            <div class="course" data-course-id="electivo-especializacion-i">Electivo especialización I</div>
+        </section>
+
+        <section class="semester">
+            <h2>9no Semestre</h2>
+            <div class="course" data-course-id="electivos-diseno-intervencion" data-prerequisites="electivos-diseno-intervencion-info">Electivos diseño e intervención</div>
+            <div class="course" data-course-id="electivos-diseno-contextos" data-prerequisites="electivos-diseno-contextos-info">Electivos diseño en contextos</div>
+            <div class="course" data-course-id="electivo-especializacion-ii">Electivo especialización II</div>
+            <div class="course" data-course-id="proyecto-investigacion" data-prerequisites="analisis-datos-cuantitativos">Proyecto de investigación</div>
+        </section>
+
+        <section class="semester">
+            <h2>10mo Semestre</h2>
+            <div class="course" data-course-id="practica-profesional" data-prerequisites="todos-hasta-9no">Práctica profesional</div>
+            <div class="course" data-course-id="electivo-especializacion-iii">Electivo especialización III</div>
+            <div class="course" data-course-id="seminario-investigacion" data-prerequisites="todos-hasta-9no">Seminario de investigación</div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
