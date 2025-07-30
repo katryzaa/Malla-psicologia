@@ -1,1 +1,249 @@
 
+/* Variables CSS para los colores */
+:root {
+    --primary-light: #F8BBD0; /* Rosa claro */
+    --primary-medium: #F48FB1; /* Rosa medio */
+    --primary-dark: #EC407A; /* Rosa oscuro */
+    --text-color: #333;
+    --text-color-light: #fff;
+    --approved-color: #A5D6A7; /* Verde claro para aprobado */
+    --approved-text-color: #4CAF50; /* Verde oscuro para texto aprobado */
+    --blocked-color: #FFCDD2; /* Rojo claro para bloqueado */
+    --border-radius: 8px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s ease;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--primary-light);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: var(--primary-dark);
+    color: var(--text-color-light);
+    padding: 20px 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 90%;
+    max-width: 1200px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Contenedor principal de la malla */
+.curriculum-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas */
+    gap: 25px;
+    width: 100%;
+    max-width: 1400px;
+    padding: 20px;
+    background-color: var(--text-color-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* Estilos para cada semestre */
+.semester {
+    background-color: var(--primary-medium);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: transform var(--transition-speed);
+}
+
+.semester:hover {
+    transform: translateY(-5px);
+}
+
+.semester h2 {
+    color: var(--text-color-light);
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: 10px;
+}
+
+/* Estilos para cada curso (ramo) */
+.course {
+    background-color: var(--primary-light);
+    color: var(--text-color);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.course:hover {
+    background-color: var(--primary-dark);
+    color: var(--text-color-light);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para ramos aprobados */
+.course.approved {
+    background-color: var(--approved-color);
+    color: var(--approved-text-color);
+    text-decoration: line-through;
+    cursor: default;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0.8;
+}
+
+.course.approved:hover {
+    background-color: var(--approved-color);
+    color: var(--approved-text-color);
+    transform: none;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para ramos bloqueados (no se pueden aprobar) */
+.course.blocked {
+    background-color: var(--blocked-color);
+    color: #b00020; /* Rojo oscuro para texto */
+    cursor: not-allowed;
+    opacity: 0.7;
+    position: relative;
+}
+
+.course.blocked:hover {
+    background-color: var(--blocked-color);
+    color: #b00020;
+    transform: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el mensaje de prerrequisitos faltantes */
+.course.blocked::after {
+    content: 'Prerrequisitos pendientes';
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.course.blocked:hover::after {
+    opacity: 1;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 1024px) {
+    .curriculum-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    header {
+        padding: 15px 20px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .curriculum-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .semester {
+        padding: 15px;
+    }
+
+    .semester h2 {
+        font-size: 1.6em;
+    }
+
+    .course {
+        padding: 12px;
+        font-size: 0.95em;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    header {
+        padding: 10px 15px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header p {
+        font-size: 0.9em;
+    }
+
+    .curriculum-grid {
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .semester {
+        padding: 10px;
+    }
+
+    .semester h2 {
+        font-size: 1.4em;
+    }
+
+    .course {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}
